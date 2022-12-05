@@ -1,0 +1,54 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  background-image: url(../public/assets/img/8140814.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100vh;
+}
+
+.form-section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+.input-form{
+  font-size: 30px;
+  border-radius: 5px;
+  margin: 4px;
+}
+
+.button-form{
+  font-size: 30px;
+  border-radius: 5px;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
+.list-section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+ 
+}
+
+.title{
+  margin-bottom: 10px;
+  font-size: 75px;
+}
+.list-item{
+  font-size: 35px;
+}
+
