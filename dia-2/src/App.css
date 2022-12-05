@@ -1,0 +1,63 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  
+  background-image: url(../src/img/8140814.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: 100vh;
+
+}
+
+.list-gifs{ 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+}
+
+.title{
+  margin-bottom: 10px;
+  font-size: 75px;
+}
+.list-item{
+  font-size: 35px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
