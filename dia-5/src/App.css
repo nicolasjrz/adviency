@@ -1,0 +1,38 @@
+.App {
+    background-image: url('../public/assets/img/8140814.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vmin;
+
+  
+}
+
+.header{
+  padding-top: 70px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+.container{
+  
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+button{
+  background-color: red;
+  color: white;
+  border-radius: 5px;
+}
+.input-form{
+  margin-right: 5px;
+  border-radius: 5px;
+}
