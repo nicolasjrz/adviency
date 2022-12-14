@@ -26,8 +26,6 @@ function App() {
     setRegalos([]);
   };
 
-  console.log(regalos.length);
-  const verdad = false;
   return (
     <div className="App">
       <div>
