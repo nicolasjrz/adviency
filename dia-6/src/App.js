@@ -1,5 +1,6 @@
 import "./App.css";
 import { useState } from "react";
+import { TextInput } from "./components/TextInput";
 
 function App() {
   const [regalos, setRegalos] = useState([]);
@@ -28,41 +29,44 @@ function App() {
 
   return (
     <div className="App">
-      <div>
-        <h1>Regalos</h1>
-        <input
-          type="text"
-          name="regalos"
-          value={inputValue.value}
-          onChange={onInputGift}
-        />
-        <button type="button" onClick={handleAddGift}>
-          agregar
-        </button>
-      </div>
+      <div className="header">
+        <div>
+          <h1>Regalos</h1>
+          <input
+            type="text"
+            name="regalos"
+            value={inputValue.value}
+            onChange={onInputGift}
+            className="input-form"
+          />
+          <button type="button" onClick={handleAddGift} className="button-form">
+            agregar
+          </button>
+        </div>
 
-      <div>
-        {regalos.length === 0 ? (
-          <p>no hay regalos en la lista</p>
-        ) : (
-          <ul>
-            {regalos.map((regalo) => (
-              <li key={regalo.id}>
-                {regalo.value}{" "}
-                <button
-                  type="button"
-                  onClick={() => handleDeleteGift(regalo.id)}
-                >
-                  X
-                </button>
-              </li>
-            ))}
-          </ul>
-        )}
+        <div>
+          {regalos.length === 0 ? (
+            <p>no hay regalos en la lista</p>
+          ) : (
+            <ul>
+              {regalos.map((regalo) => (
+                <TextInput
+                  key={regalo.id}
+                  regalo={regalo}
+                  handleDeleteGift={handleDeleteGift}
+                />
+              ))}
+            </ul>
+          )}
 
-        <button type="button" onClick={handleDeleteAll}>
-          eliminar lista
-        </button>
+          <button
+            type="button"
+            onClick={handleDeleteAll}
+            className="button-form"
+          >
+            eliminar lista
+          </button>
+        </div>
       </div>
     </div>
   );
