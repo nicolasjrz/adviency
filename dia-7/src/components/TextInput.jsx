@@ -3,9 +3,13 @@ import React from "react";
 export const TextInput = ({ regalo, onDeleteIdGift }) => {
   const { id, value } = regalo;
   return (
-    <div>
+    <div className="container">
       <li>{value}</li>
-      <button type="button" onClick={() => onDeleteIdGift(id)}>
+      <button
+        type="button"
+        onClick={() => onDeleteIdGift(id)}
+        className="button-form"
+      >
         X
       </button>
     </div>

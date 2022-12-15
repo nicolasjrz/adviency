@@ -32,38 +32,45 @@ function App() {
 
   const onDeleteAllGift = () => {
     setRegalos([]);
+    setIsRegalo(false);
   };
   return (
     <div className="App">
-      <h2>Regalos</h2>
-      <div>
-        <input
-          type="text"
-          name=""
-          value={inputValue.value}
-          onChange={hadleInput}
-        />
-        <button type="button" onClick={onDeleteGift}>
-          agregar
+      <div className="body">
+        <h1>Regalos</h1>
+        <div className="container-form">
+          <input
+            type="text"
+            name=""
+            value={inputValue.value}
+            onChange={hadleInput}
+            className="input-form"
+          />
+          <button type="button" onClick={onDeleteGift} className="button-form">
+            agregar
+          </button>
+        </div>
+        {isRegalo ? <p>regalo ya agregado !!! </p> : <></>}
+
+        <div className="container-list">
+          {regalos.length === 0 ? (
+            <p>no hay regalos</p>
+          ) : (
+            <ul>
+              {regalos.map((regalo) => (
+                <TextInput
+                  key={regalo.id}
+                  regalo={regalo}
+                  onDeleteIdGift={onDeleteIdGift}
+                />
+              ))}
+            </ul>
+          )}
+        </div>
+        <button type="button" onClick={onDeleteAllGift} className="button-form">
+          eliminar todo
         </button>
       </div>
-      {isRegalo ? <p>regalo ya agregado !!! </p> : <></>}
-      {regalos.length === 0 ? (
-        <p>no hay regalos</p>
-      ) : (
-        <ul>
-          {regalos.map((regalo) => (
-            <TextInput
-              key={regalo.id}
-              regalo={regalo}
-              onDeleteIdGift={onDeleteIdGift}
-            />
-          ))}
-        </ul>
-      )}
-      <button type="button" onClick={onDeleteAllGift}>
-        eliminar
-      </button>
     </div>
   );
 }
