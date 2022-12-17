@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import { TextInput } from "./components/TextInput";
 
 function App() {
   const [regalos, setRegalos] = useState([]);
@@ -62,6 +63,7 @@ function App() {
               name="gift"
               onChange={onInputChange}
               value={inputValue.gift}
+              className="input-form"
             />
             <input
               type="number"
@@ -70,8 +72,11 @@ function App() {
               value={inputValue.cantidad}
               max="10"
               min="0"
+              className="input-form"
             />
-            <button type="submit">agregar</button>
+            <button type="submit" className="button-form">
+              agregar
+            </button>
           </form>
           {isRegalo.found ? <p>regalo ya agregado</p> : <></>}
         </div>
@@ -79,20 +84,25 @@ function App() {
 
       {isRegalo.isGifs ? (
         <div className="body">
-          <ul>
-            {regalos.map((regalo) => (
-              <li key={regalo.id}>
-                {regalo.gift} ({regalo.cant}){" "}
-                <button type="button" onClick={() => handleDeleteId(regalo.id)}>
-                  X
-                </button>
-              </li>
-            ))}
-          </ul>
+          <div>
+            <ul>
+              {regalos.map((regalo) => (
+                <TextInput
+                  key={regalo.id}
+                  regalo={regalo}
+                  handleDeleteId={handleDeleteId}
+                />
+              ))}
+            </ul>
 
-          <button type="button" onClick={handleDeleteAll}>
-            eliminar todo
-          </button>
+            <button
+              type="button"
+              onClick={handleDeleteAll}
+              className="button-form"
+            >
+              eliminar todo
+            </button>
+          </div>
         </div>
       ) : (
         <>
